@@ -1,0 +1,16 @@
+function battleOutcome( attacker , defender ) {
+  let attackSort = attacker.sort().reverse();
+  let defendSort = defender.sort().reverse();
+  let attackCount = 0;
+  let defendCount = 0;
+  while (attackSort.length > 0 && defendSort.length > 0){
+    let first = attackSort.shift();
+    let second = defendSort.shift();
+    if (first > second){
+      defendCount += 1;
+    }else if (first <= second){
+      attackCount += 1;
+    }
+  }
+  return [attackCount, defendCount];
+}
